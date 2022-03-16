@@ -1,0 +1,9 @@
+export const actors = `<Actors> `;
+export const awards = `<Awards> `;
+export const director = `<Director> `;
+export const rating = `imdbRating: `;
+export const released = `Released: `;
+export const runtime = `Runtime: `;
+export const search = `Search!`;
+export const yearString = `Year: `;
+export const typeString = `Type: `

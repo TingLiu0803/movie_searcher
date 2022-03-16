@@ -1,0 +1,26 @@
+.search_bar {
+  border-radius: 1rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  width: 80%;
+}
+
+.input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 90%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.batman_image {
+  margin-bottom: 3rem;
+}

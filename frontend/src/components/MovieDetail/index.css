@@ -1,0 +1,25 @@
+.MovieDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.top_note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.detail_p_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail_p {
+  padding: 0.5rem;
+};
