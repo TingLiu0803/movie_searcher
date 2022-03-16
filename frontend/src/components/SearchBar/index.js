@@ -3,9 +3,12 @@ import axios from "axios";
 import { useContextValue } from "../../context/index";
 import { useState, useEffect } from "react";
 import { BASE_URL } from "../../shared/constants/URLs";
+import { title } from "../../shared/constants/constantStrings";
+import LoadingPage from "../../components/LoadingPage/index";
 
 const SearchBar = () => {
   const [formData, setFormData] = useState("");
+  const [delayed, setDelayed] = useState(true);
   const { setMovies } = useContextValue();
 
   const onChange = ({ target }) => {
@@ -27,11 +30,17 @@ const SearchBar = () => {
   };
 
   useEffect(() => {
+    const timeout = setTimeout(() => setDelayed(false), 400);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
     if (formData) searchMovies();
   }, [formData]);
 
-  return (
+  return !delayed ? (
     <div className="search_bar">
+      <h1 className="title">{title}</h1>
       <input
         type="text"
         className="input"
@@ -39,7 +48,7 @@ const SearchBar = () => {
         onChange={onChange}
       />
     </div>
-  );
+  ) : "";
 };
 
 export default SearchBar;

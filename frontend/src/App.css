@@ -2,16 +2,16 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-family: Arial;
   height: 100vh;
   width: 100%;
 }
 
 body {
-  background-color: #0f2027;
-  background: linear-gradient(to right,#2c5364, #203a43, #0f2027);
+  background-color: #01161f;
+  background: linear-gradient(to right,#1a3d4d, #18333b, #01161f);
   cursor: pointer;
   color: #d86500;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 button {

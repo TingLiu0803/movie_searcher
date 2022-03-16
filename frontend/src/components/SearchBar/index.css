@@ -6,7 +6,7 @@
 }
 
 .input {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #333;
   font-size: 1.2rem;
   margin: 0 auto;
@@ -23,4 +23,11 @@
 
 .batman_image {
   margin-bottom: 3rem;
+}
+
+.title {
+  text-align: center;
+  color: #d86500;
+  font-weight: 2000;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

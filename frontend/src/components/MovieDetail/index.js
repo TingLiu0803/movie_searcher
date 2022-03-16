@@ -1,4 +1,5 @@
 import "./index.css";
+import LoadingPage from "../../components/LoadingPage/index";
 import { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useContextValue } from "../../context/appContext.js";
@@ -15,6 +16,7 @@ import { altImageUrl } from "../../shared/constants/URLs";
 const MovieDetail = () => {
   const history = useHistory();
   const [movie, setMovie] = useState({});
+  const [delayed, setDelayed] = useState(true);
   const { fetchMovieById } = useContextValue();
   const { id } = useParams();
   const onClick = () => {
@@ -22,14 +24,19 @@ const MovieDetail = () => {
   };
 
   useEffect(() => {
-    fetchMovieById(id, setMovie);
+    const timeout = setTimeout(() => setDelayed(false), 1000);
+    return () => clearTimeout(timeout);
   }, []);
 
-  return (
+  useEffect(() => {
+    fetchMovieById(id, setMovie);
+  }, []);
+  
+  return !delayed && movie ? (
     <div className="MovieDetail" key={movie.imdbID}>
-      <h1>{movie.Title}</h1>
+      <h2>{movie.Title}</h2>
       <div className="top_note">
-        <h3>{`${rating} ${movie.imdbRating}`}</h3>
+        <h3>{`${rating} ${movie.imdbRating}`}</h3> 
         <div className="detail_p_container">
           <p className="detail_p">{`${released} ${movie.Released}`}</p>
           <p className="detail_p">{`${runtime} ${movie.Runtime}`}</p>
@@ -47,7 +54,7 @@ const MovieDetail = () => {
       <h3>{`${awards} ${movie.Awards}`}</h3>
       <p>{movie.Plot}</p>
     </div>
-  );
+  ) : <LoadingPage />
 };
 
 export default MovieDetail;

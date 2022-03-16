@@ -20,7 +20,7 @@ const Movie = ({ img, imdbID, title, year, type }) => {
 
   return (
     <div className="Movie" key={imdbID}>
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       <h3>{`${yearString} ${year}`}</h3>
       <button onClick={onClick}>
         <img 

@@ -5,5 +5,6 @@ export const rating = `imdbRating: `;
 export const released = `Released: `;
 export const runtime = `Runtime: `;
 export const search = `Search!`;
+export const typeString = `Type: `;
+export const title = `Find Your Favorite Movies`;
 export const yearString = `Year: `;
-export const typeString = `Type: `
